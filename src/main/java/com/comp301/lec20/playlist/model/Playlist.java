@@ -5,4 +5,5 @@ public interface Playlist {
     Song getSong(int index);
     void removeSong(int index);
     void addSong(Song song, int index);
+    void addObserver(PlaylistObserver observer);
 }

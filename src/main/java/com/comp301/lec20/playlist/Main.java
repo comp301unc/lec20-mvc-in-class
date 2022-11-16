@@ -24,6 +24,8 @@ public class Main extends Application {
     Playlist playlist = new PlaylistImpl();
     Controller controller = new ControllerImpl(playlist);
     View view = new View(controller);
+    playlist.addObserver(view);
+
     Scene scene = new Scene(view.render());
     stage.setScene(scene);
     stage.show();

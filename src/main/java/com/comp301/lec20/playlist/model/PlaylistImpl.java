@@ -5,9 +5,11 @@ import java.util.List;
 
 public class PlaylistImpl implements Playlist {
     private List<Song> playlist;
+    private List<PlaylistObserver> observers;
 
     public PlaylistImpl() {
         playlist = new ArrayList<>();
+        observers = new ArrayList<>();
     }
 
     @Override
@@ -28,7 +30,8 @@ public class PlaylistImpl implements Playlist {
     @Override
     public void addSong(Song song, int index) {
         playlist.add(index, song);
-        System.out.println(this);
+        notifyObservers();
+//        System.out.println(this);
     }
 
     @Override
@@ -38,5 +41,16 @@ public class PlaylistImpl implements Playlist {
             result += i + ": " + playlist.get(i) + "\n";
         }
         return result;
+    }
+
+    @Override
+    public void addObserver(PlaylistObserver observer) {
+        observers.add(observer);
+    }
+
+    private void notifyObservers() {
+        for (PlaylistObserver o : observers) {
+            o.update(this);
+        }
     }
 }

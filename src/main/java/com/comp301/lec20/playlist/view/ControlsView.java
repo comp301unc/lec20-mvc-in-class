@@ -15,6 +15,7 @@ public class ControlsView {
 
     Parent render() {
         StackPane pane = new StackPane();
+        pane.getStyleClass().add("controls-layout");
 
         Button shuffle_button = new Button("Shuffle");
 

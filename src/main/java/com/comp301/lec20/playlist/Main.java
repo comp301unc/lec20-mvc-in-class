@@ -27,6 +27,7 @@ public class Main extends Application {
     playlist.addObserver(view);
 
     Scene scene = new Scene(view.render());
+    scene.getStylesheets().add("main.css");
     stage.setScene(scene);
     stage.show();
   }

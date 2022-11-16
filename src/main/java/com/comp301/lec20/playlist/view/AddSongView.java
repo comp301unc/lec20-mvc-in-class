@@ -19,6 +19,7 @@ public class AddSongView {
 
     public Parent render() {
         HBox layout = new HBox();
+        layout.getStyleClass().add("add-song-layout");
 
         // Title
         layout.getChildren().add(new Label("Song:"));
@@ -33,6 +34,7 @@ public class AddSongView {
         // Rating
         layout.getChildren().add(new Label("Rating:"));
         Slider ratingSlider = new Slider(0, 5, 5);
+        ratingSlider.getStyleClass().add("add-song-slider");
         layout.getChildren().add(ratingSlider);
 
         // Add button

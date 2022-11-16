@@ -20,6 +20,7 @@ public class SongView {
 
     public Parent render() {
         HBox layout = new HBox();
+        layout.getStyleClass().add("song-layout");
 
         // Delete button
         Button deleteButton = new Button("\u274C");

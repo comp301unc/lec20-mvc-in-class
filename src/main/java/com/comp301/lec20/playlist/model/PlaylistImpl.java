@@ -25,6 +25,7 @@ public class PlaylistImpl implements Playlist {
     @Override
     public void removeSong(int index) {
         playlist.remove(index);
+        notifyObservers();
     }
 
     @Override

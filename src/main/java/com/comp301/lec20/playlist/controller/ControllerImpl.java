@@ -27,4 +27,28 @@ public class ControllerImpl implements Controller {
     public void addSong(String title, String artist, int rating) {
         playlist.addSong(new SongImpl(title, artist, rating), playlist.getNumSongs());
     }
+
+    @Override
+    public void deleteSong(int index) {
+        playlist.removeSong(index);
+    }
+
+    public void moveSongUp(int index) {
+        if (index == 0) {
+            return;
+        }
+        Song song = playlist.getSong(index);
+        playlist.removeSong(index);
+        playlist.addSong(song, index-1);
+    }
+
+    public void moveSongDown(int index) {
+        if (index == playlist.getNumSongs()-1) {
+            return;
+        }
+        Song song = playlist.getSong(index);
+        playlist.removeSong(index);
+        playlist.addSong(song, index+1);
+    }
+
 }

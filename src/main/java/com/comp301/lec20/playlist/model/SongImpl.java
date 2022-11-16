@@ -25,4 +25,9 @@ public class SongImpl implements Song {
     public int getRating() {
         return rating;
     }
+
+    @Override
+    public String toString() {
+        return title + " by " + artist + " (" + rating + " stars)";
+    }
 }

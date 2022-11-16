@@ -28,5 +28,15 @@ public class PlaylistImpl implements Playlist {
     @Override
     public void addSong(Song song, int index) {
         playlist.add(index, song);
+        System.out.println(this);
+    }
+
+    @Override
+    public String toString() {
+        String result = "";
+        for (int i=0; i<playlist.size(); i++) {
+            result += i + ": " + playlist.get(i) + "\n";
+        }
+        return result;
     }
 }

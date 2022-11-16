@@ -2,6 +2,7 @@ package com.comp301.lec20.playlist.view;
 
 import com.comp301.lec20.playlist.controller.Controller;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -37,6 +38,15 @@ public class AddSongView {
         // Add button
         Button addButton = new Button("\uff0b");
         layout.getChildren().add(addButton);
+
+        addButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                controller.addSong(titleInput.getText(),
+                        artistInput.getText(),
+                        (int) ratingSlider.getValue());
+            }
+        });
 
         return layout;
 

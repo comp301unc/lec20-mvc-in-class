@@ -51,4 +51,8 @@ public class ControllerImpl implements Controller {
         playlist.addSong(song, index+1);
     }
 
+    public void shuffle() {
+        playlist.shuffle();
+    }
+
 }

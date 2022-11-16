@@ -9,4 +9,5 @@ public interface Controller {
     void deleteSong(int index);
     void moveSongUp(int index);
     void moveSongDown(int index);
+    void shuffle();
 }

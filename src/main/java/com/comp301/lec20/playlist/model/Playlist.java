@@ -6,4 +6,5 @@ public interface Playlist {
     void removeSong(int index);
     void addSong(Song song, int index);
     void addObserver(PlaylistObserver observer);
+    void shuffle();
 }

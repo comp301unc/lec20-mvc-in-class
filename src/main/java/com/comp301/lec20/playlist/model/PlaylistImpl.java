@@ -1,6 +1,7 @@
 package com.comp301.lec20.playlist.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PlaylistImpl implements Playlist {
@@ -33,6 +34,11 @@ public class PlaylistImpl implements Playlist {
         playlist.add(index, song);
         notifyObservers();
 //        System.out.println(this);
+    }
+
+    public void shuffle() {
+        Collections.shuffle(playlist);
+        notifyObservers();
     }
 
     @Override
